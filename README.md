@@ -1,24 +1,43 @@
-# README
+# Getting updates from webscale social media
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+● Functionality
+1. Taking updated from Twitter, Facebook, Instagram
+2. Handelling errors from result of social media API
+3. Handling delay with response from social media API
 
-Things you may want to cover:
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
 
-* Configuration
 
-* Database creation
+### Installing
 
-* Database initialization
+A step by step series of examples that tell you have to get a development env running
 
-* How to run the test suite
+1. Clone / Download the code.
+2. You may create gemset in .ruby-gemset if you want.
+3. Code is tested in ruby version 2.6.5.
+4. Open terminal and cd in root directory.
+5. Install bundler and gems:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+gem install bundler
+bundle install
+EDITOR="subl --wait" rails credentials:edit --environment development
+rails dev:cache
+bundle exec sidekiq
+```
 
-* Deployment instructions
+### Enable cache in development enviornment
 
-* ...
+```
+rails dev:cache
+```
+
+### Execution
+
+```
+rails server
+curl localhost:3000
+```
